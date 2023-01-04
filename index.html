@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chess</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+        integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>    
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(8, 5.5rem);
+            grid-template-rows: repeat(8, 5.5rem);
+            background-color: #6f1e1e;
+            box-shadow: .1rem .3rem .5rem .7rem rgba(67, 65, 65, 0.5);
+            perspective: 100px;
+            border-radius: .5rem;
+        }
+        .black {
+            background-color: #b26332;
+            text-align: center;                      
+        }
+        .white {
+            background-color: #f3d8ba;
+            text-align: center;
+        }
+        .fa-solid{
+            font-size: 3.5rem;
+            margin-top: 1rem;
+        }
+        .coinWhite{
+            color: rgb(169, 165, 165);           
+        }
+        .coinBlack {
+            color: rgb(58, 55, 55);
+        }
+        .scoreBox{
+            background-color: #6f1e1e;
+            width: 20rem;
+            border-radius: 1rem;
+            height: 40rem;
+            margin-top: 3rem;
+        }
+        .heading{
+            font-family: sans-serif;
+            color: white;
+            text-transform: capitalize;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <div class=" d-flex justify-content-center gap-2 ">
+        <div class="scoreBox ">
+           <h2 class="heading d-flex justify-content-center mt-3">white score: <span id="firstBox"> 0 </span></h2>
+        </div>
+        <div class="grid outerBox p-4">
+            <div onclick="call(0)" class="white box"><i class="coinBlack fa-solid fa-chess-rook"></i></div>
+            <div onclick="call(1)" class="black box"><i class="coinBlack fa-solid fa-chess-knight"></i></div>
+            <div onclick="call(2)" class="white box"><i class="coinBlack fa-solid fa-chess-bishop"></i></div>
+            <div onclick="call(3)" class="black box"><i class="coinBlack fa-solid fa-chess-queen"></i></div>
+            <div onclick="call(4)" class="white box"><i class="coinBlack fa-solid fa-chess-king"></i></div>
+            <div onclick="call(5)" class="black box"><i class="coinBlack fa-solid fa-chess-bishop"></i></div>
+            <div onclick="call(6)" class="white box"><i class="coinBlack fa-solid fa-chess-knight"></i></div>
+            <div onclick="call(7)" class="black box"><i class="coinBlack fa-solid fa-chess-rook"></i></div>
+
+            <div onclick="call(8)" class="black box"><i class="coinBlack fa-solid fa-chess-pawn"></i></div>
+            <div onclick="call(9)" class="white box"><i class="coinBlack fa-solid fa-chess-pawn"></i></div>
+            <div onclick="call(10)" class="black box"><i class="coinBlack fa-solid fa-chess-pawn"></i></div>
+            <div onclick="call(11)" class="white box"><i class="coinBlack fa-solid fa-chess-pawn"></i></div>
+            <div onclick="call(12)" class="black box"><i class="coinBlack fa-solid fa-chess-pawn"></i></div>
+            <div onclick="call(13)" class="white box"><i class="coinBlack fa-solid fa-chess-pawn"></i></div>
+            <div onclick="call(14)" class="black box"><i class="coinBlack fa-solid fa-chess-pawn"></i></div>
+            <div onclick="call(15)" class="white box"><i class="coinBlack fa-solid fa-chess-pawn"></i></div>
+
+            <div onclick="call(16)" class="white box"></div>
+            <div onclick="call(17)" class="black box"></div>
+            <div onclick="call(18)" class="white box"></div>
+            <div onclick="call(19)" class="black box"></div>
+            <div onclick="call(20)" class="white box"></div>
+            <div onclick="call(21)" class="black box"></div>
+            <div onclick="call(22)" class="white box"></div>
+            <div onclick="call(23)" class="black box"></div>
+
+            <div onclick="call(24)" class="black box"></div>
+            <div onclick="call(25)"class="white box"></div>
+            <div onclick="call(26)" class="black box"></div>
+            <div onclick="call(27)" class="white box"></div>
+            <div onclick="call(28)" class="black box"></div>
+            <div onclick="call(29)" class="white box"></div>
+            <div onclick="call(30)" class="black box"></div>
+            <div onclick="call(31)" class="white box"></div>
+
+            <div onclick="call(32)" class="white box"></div>
+            <div onclick="call(33)" class="black box"></div>
+            <div onclick="call(34)" class="white box"></div>
+            <div onclick="call(35)" class="black box"></div>
+            <div onclick="call(36)" class="white box"></div>
+            <div onclick="call(37)" class="black box"></div>
+            <div onclick="call(38)" class="white box"></div>
+            <div onclick="call(39)" class="black box"></div>
+
+            <div onclick="call(40)" class="black box"></div>
+            <div onclick="call(41)" class="white box"></div>
+            <div onclick="call(42)" class="black box"></div>
+            <div onclick="call(43)" class="white box"></div>
+            <div onclick="call(44)" class="black box"></div>
+            <div onclick="call(45)" class="white box"></div>
+            <div onclick="call(46)" class="black box"></div>
+            <div onclick="call(47)" class="white box"></div>
+
+            <div onclick="call(48)" class="white box"><i class="coinWhite fa-solid fa-chess-pawn"></i></div>
+            <div onclick="call(49)" class="black box"><i class="coinWhite fa-solid fa-chess-pawn"></i></div>
+            <div onclick="call(50)" class="white box"><i class="coinWhite fa-solid fa-chess-pawn"></i></div>
+            <div onclick="call(51)" class="black box"><i class="coinWhite fa-solid fa-chess-pawn"></i></div>
+            <div onclick="call(52)" class="white box"><i class="coinWhite fa-solid fa-chess-pawn"></i></div>
+            <div onclick="call(53)" class="black box"><i class="coinWhite fa-solid fa-chess-pawn"></i></div>
+            <div onclick="call(54)" class="white box"><i class="coinWhite fa-solid fa-chess-pawn"></i></div>
+            <div onclick="call(55)" class="black box"><i class="coinWhite fa-solid fa-chess-pawn"></i></div>
+
+            <div onclick="call(56)" class="black box"><i class="coinWhite fa-solid fa-chess-rook"></i></div>
+            <div onclick="call(57)" class="white box"><i class="coinWhite fa-solid fa-chess-knight"></i></div>
+            <div onclick="call(58)" class="black box"><i class="coinWhite fa-solid fa-chess-bishop"></i></div>
+            <div onclick="call(59)" class="white box"><i class="coinWhite fa-solid fa-chess-queen"></i></div>
+            <div onclick="call(60)" class="black box"><i class="coinWhite fa-solid fa-chess-king"></i></div>
+            <div onclick="call(61)" class="white box"><i class="coinWhite fa-solid fa-chess-bishop"></i></div>
+            <div onclick="call(62)" class="black box"><i class="coinWhite fa-solid fa-chess-knight"></i></div>
+            <div onclick="call(63)" class="white box"><i class="coinWhite fa-solid fa-chess-rook"></i></div>
+        </div>
+        <div class="scoreBox">
+            <h2 class="heading d-flex justify-content-center mt-3">black score: <span id="secondBox"> 0 </span> </h2>
+        </div>
+    </div>
+
+    <script src="./chess.js"></script>
+</body>
+
+</html>
